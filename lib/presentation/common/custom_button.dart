@@ -20,6 +20,7 @@ class CustomButton extends StatelessWidget {
     return Center(
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
+            elevation: 0,
             backgroundColor: ColorManager.primary,
             fixedSize: size,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),

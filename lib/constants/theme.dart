@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 const font = "Barlow";
 
 final appTheme = ThemeData.dark().copyWith(
+  scaffoldBackgroundColor: ColorManager.backgroundColor,
   primaryColor: ColorManager.white,
   primaryColorDark: const Color(0xFF2B2A2A),
   splashColor: Colors.transparent,

@@ -7,6 +7,7 @@ import 'presentation/authentication/pages/forgot_password/forgot_password_page.d
 import 'presentation/authentication/pages/forgot_password/otp_verification_page.dart';
 import 'presentation/authentication/pages/login/login_page.dart';
 import 'presentation/authentication/pages/register/register_page.dart';
+import 'presentation/homepage/homepage.dart';
 import 'presentation/onboarding/onboarding_screen.dart';
 import 'resources/resources.dart';
 
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
               Routes.forgotPasswordPage: (context) => const ForgotPasswordPage(),
               Routes.otpVerificationPage: (context) => const OTPVerificationPage(),
               Routes.createPasswordPage: (context) => const CreatePasswordPage(),
+              Routes.homePage: (context) => const HomePage(),
             },
           );
         });
