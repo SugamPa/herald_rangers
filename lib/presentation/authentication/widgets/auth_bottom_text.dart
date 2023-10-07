@@ -25,7 +25,7 @@ class AuthBottomText extends StatelessWidget {
           onTap: onTap,
           child: Text(
             rightText,
-            style: context.bodyLarge?.copyWith(color: ColorManager.primary),
+            style: context.bodyLarge?.copyWith(color: ColorManager.primaryLight),
           ),
         ),
       ],

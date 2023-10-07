@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ColorManager {
-  static const Color _yellow = Color(0xFFFFCC1A);
+  static const Color _blue = Color(0xFF1025A1);
+  static const Color _lightBlue = Color(0xFF5BA3F8);
   static const Color _red = Color(0xFFE60000);
 
-  static const Color primary = _yellow;
+  static const Color primary = _blue;
+  static const Color primaryLight = _lightBlue;
   static const Color errorRed = _red;
   static const Color backgroundColor = Color(0xFF171717);
   static const Color pureBlack = Color(0xFF000000);

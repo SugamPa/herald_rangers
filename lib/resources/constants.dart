@@ -81,9 +81,4 @@ class Routes {
   static const forgotPasswordPage = '/forgot-password';
   static const otpVerificationPage = '/otp-verification';
   static const createPasswordPage = '/create-password';
-  static const homePage = '/home';
-  static const profilePage = '/profile';
-  static const provinceSelectionPage = '/province-selection';
-  static const destinationDetailPage = '/destination-detail';
-  static const cityBusFinderHomePage = '/city-bus-finder-home';
 }

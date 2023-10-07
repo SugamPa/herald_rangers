@@ -36,10 +36,6 @@ class CustomBottomNavigationBar extends StatelessWidget {
             onPressed: () {},
             icon: const Icon(Icons.favorite, size: 30),
           ),
-          IconButton(
-            onPressed: () => context.navigatorPushNamed(Routes.profilePage),
-            icon: const Icon(Icons.account_circle, size: 30),
-          ),
         ],
       ),
     );

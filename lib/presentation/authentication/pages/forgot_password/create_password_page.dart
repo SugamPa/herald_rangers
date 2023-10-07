@@ -41,7 +41,7 @@ class CreatePasswordPage extends StatelessWidget {
                     text: "Verify",
                     size: Size(context.width * 0.9, context.height * 0.06),
                     radius: 12,
-                    onPressed: () => context.navigatorPushReplacementNamed(Routes.homePage),
+                    onPressed: () => context.navigatorPushReplacementNamed(Routes.onboardingPage),
                   ),
                 ],
               ),

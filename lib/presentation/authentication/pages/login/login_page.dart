@@ -59,7 +59,7 @@ class LoginPage extends StatelessWidget {
                     text: "Log in",
                     size: Size(context.width * 0.9, context.height * 0.07),
                     radius: 12,
-                    onPressed: () => context.navigatorPushReplacementNamed(Routes.homePage),
+                    onPressed: () => context.navigatorPushReplacementNamed(Routes.onboardingPage),
                   ),
                 ],
               )),
