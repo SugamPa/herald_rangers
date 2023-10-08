@@ -26,6 +26,7 @@ class Home extends StatelessWidget {
                     ExplorePage(),
                   ],
                 ),
+                CustomBottomNavigationBar(homeCubit: context.read<HomeCubit>()),
               ],
             );
           },

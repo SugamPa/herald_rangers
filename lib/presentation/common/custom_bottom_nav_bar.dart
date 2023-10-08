@@ -31,17 +31,19 @@ class CustomBottomNavigationBar extends StatelessWidget {
             icon: Icons.home_filled,
             label: "Home",
             onTap: () => homeCubit.changeIndex(0),
-            isSelected: true,
+            isSelected: homeCubit.isSelected(0),
           ),
           NavBarButton(
             label: "Explore",
             icon: Icons.explore_outlined,
             onTap: () => homeCubit.changeIndex(1),
+            isSelected: homeCubit.isSelected(1),
           ),
           NavBarButton(
             label: "Blog",
             icon: Icons.edit_square,
             onTap: () => homeCubit.changeIndex(2),
+            isSelected: homeCubit.isSelected(2),
           ),
         ],
       ),
@@ -64,15 +66,12 @@ class NavBarButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        GestureDetector(
-          onTap: onTap,
-          child: Icon(icon, size: 25, color: isSelected ? ColorManager.white : ColorManager.lightTextGrey),
-        ),
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        Icon(icon, size: 25, color: isSelected ? ColorManager.white : ColorManager.lightTextGrey),
         Text(label, style: TextStyle(color: isSelected ? ColorManager.white : ColorManager.lightTextGrey)),
-      ],
+      ]),
     );
   }
 }
