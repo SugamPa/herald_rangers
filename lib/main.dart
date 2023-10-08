@@ -30,14 +30,17 @@ class MyApp extends StatelessWidget {
             themeMode: ThemeMode.dark,
             theme: appTheme,
             title: Constants.appName,
-            initialRoute: Routes.onboardingPage,
+            initialRoute: Routes.homePage,
             routes: {
               Routes.onboardingPage: (context) => const OnBoardingScreen(),
               Routes.loginPage: (context) => const LoginPage(),
               Routes.registerPage: (context) => const RegisterPage(),
-              Routes.forgotPasswordPage: (context) => const ForgotPasswordPage(),
-              Routes.otpVerificationPage: (context) => const OTPVerificationPage(),
-              Routes.createPasswordPage: (context) => const CreatePasswordPage(),
+              Routes.forgotPasswordPage: (context) =>
+                  const ForgotPasswordPage(),
+              Routes.otpVerificationPage: (context) =>
+                  const OTPVerificationPage(),
+              Routes.createPasswordPage: (context) =>
+                  const CreatePasswordPage(),
               Routes.homePage: (context) => const Home(),
             },
           );

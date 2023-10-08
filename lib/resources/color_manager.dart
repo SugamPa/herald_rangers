@@ -21,4 +21,5 @@ class ColorManager {
   static const Color lightTextGrey = Color.fromARGB(255, 78, 78, 78);
   static const Color lighterTextGrey = Color(0xFFB3B3B3);
   static const Color textLightGrey = Color(0xFF9B9B9B);
+  static const Color neutral = Color(0xFF2A2A2A);
 }

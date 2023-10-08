@@ -11,10 +11,17 @@ final appTheme = ThemeData.dark().copyWith(
   primaryColorDark: const Color(0xFF2B2A2A),
   splashColor: Colors.transparent,
   brightness: Brightness.dark,
-  textSelectionTheme: const TextSelectionThemeData(cursorColor: ColorManager.white),
-  inputDecorationTheme: const InputDecorationTheme(iconColor: ColorManager.white, outlineBorder: BorderSide(color: ColorManager.white)),
+  textSelectionTheme:
+      const TextSelectionThemeData(cursorColor: ColorManager.white),
+  inputDecorationTheme: const InputDecorationTheme(
+      iconColor: ColorManager.white,
+      outlineBorder: BorderSide(color: ColorManager.white)),
   dialogTheme: DialogTheme(
-      titleTextStyle: TextStyle(color: ColorManager.white, fontSize: 15.sp, letterSpacing: 0.2, fontWeight: FontWeight.w600),
+      titleTextStyle: TextStyle(
+          color: ColorManager.white,
+          fontSize: 15.sp,
+          letterSpacing: 0.2,
+          fontWeight: FontWeight.w600),
       contentTextStyle: TextStyle(
         color: ColorManager.white,
         fontSize: 14.sp,
@@ -45,12 +52,37 @@ final appTheme = ThemeData.dark().copyWith(
       fontSize: 57,
       color: ColorManager.white,
     ),
-    displayMedium: const TextStyle(fontFamily: font, fontSize: 45, color: ColorManager.white, fontWeight: FontWeight.w500),
-    displaySmall: const TextStyle(fontFamily: font, fontWeight: FontWeight.w500, fontSize: 36, letterSpacing: 1.4, color: ColorManager.white),
-    titleLarge: const TextStyle(fontFamily: font, fontWeight: FontWeight.w500, color: ColorManager.white, fontSize: 22),
-    titleMedium: const TextStyle(fontFamily: font, fontWeight: FontWeight.w500, color: ColorManager.white, fontSize: 16),
-    titleSmall: const TextStyle(fontFamily: font, fontSize: 14, fontWeight: FontWeight.w500, color: ColorManager.white),
-    bodyLarge: const TextStyle(fontFamily: font, fontWeight: FontWeight.w400, color: ColorManager.white, fontSize: 16),
+    displayMedium: const TextStyle(
+        fontFamily: font,
+        fontSize: 45,
+        color: ColorManager.white,
+        fontWeight: FontWeight.w500),
+    displaySmall: const TextStyle(
+        fontFamily: font,
+        fontWeight: FontWeight.w500,
+        fontSize: 36,
+        letterSpacing: 1.4,
+        color: ColorManager.white),
+    titleLarge: const TextStyle(
+        fontFamily: font,
+        fontWeight: FontWeight.w500,
+        color: ColorManager.white,
+        fontSize: 22),
+    titleMedium: const TextStyle(
+        fontFamily: font,
+        fontWeight: FontWeight.w500,
+        color: ColorManager.white,
+        fontSize: 16),
+    titleSmall: const TextStyle(
+        fontFamily: font,
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+        color: ColorManager.white),
+    bodyLarge: const TextStyle(
+        fontFamily: font,
+        fontWeight: FontWeight.w400,
+        color: ColorManager.white,
+        fontSize: 16),
     bodyMedium: const TextStyle(
       fontFamily: font,
       fontWeight: FontWeight.w400,
@@ -63,8 +95,16 @@ final appTheme = ThemeData.dark().copyWith(
       color: ColorManager.white,
       fontSize: 12,
     ),
-    labelLarge: TextStyle(fontFamily: font, fontSize: 14.sp, color: ColorManager.white, fontWeight: FontWeight.w400),
-    labelMedium: const TextStyle(fontFamily: font, fontWeight: FontWeight.w400, fontSize: 12, color: ColorManager.white),
+    labelLarge: TextStyle(
+        fontFamily: font,
+        fontSize: 14.sp,
+        color: ColorManager.white,
+        fontWeight: FontWeight.w400),
+    labelMedium: const TextStyle(
+        fontFamily: font,
+        fontWeight: FontWeight.w400,
+        fontSize: 12,
+        color: ColorManager.white),
     labelSmall: const TextStyle(
       fontFamily: font,
       fontWeight: FontWeight.w300,
@@ -103,12 +143,15 @@ final appTheme = ThemeData.dark().copyWith(
   elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
           foregroundColor: MaterialStateProperty.all(ColorManager.white),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5.r)))),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(5.r)))),
           backgroundColor: MaterialStateProperty.all(const Color(0xFF34587D)))),
   iconTheme: const IconThemeData(color: ColorManager.white),
   dividerColor: const Color(0xffD1D1D1),
   unselectedWidgetColor: Colors.grey,
-  bottomAppBarTheme: const BottomAppBarTheme(color: ColorManager.backgroundColor),
+  bottomAppBarTheme:
+      const BottomAppBarTheme(color: ColorManager.backgroundColor),
   colorScheme: const ColorScheme(
           brightness: Brightness.dark,
           primary: ColorManager.white,

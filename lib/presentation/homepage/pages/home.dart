@@ -16,25 +16,22 @@ class Home extends StatelessWidget {
       create: (context) => HomeCubit(),
       child: SafeArea(
         bottom: false,
-        child: Scaffold(
-          body: BlocBuilder<HomeCubit, HomeState>(
-            builder: (context, state) {
-              return Column(
-                children: [
-                  IndexedStack(
-                    index: context.read<HomeCubit>().index,
-                    children: const [
-                      HomePage(),
-                      BlogPage(),
-                      LearnPage(),
-                      ExplorePage(),
-                    ],
-                  ),
-                  CustomBottomNavigationBar(homeCubit: context.read<HomeCubit>()),
+        child: BlocBuilder<HomeCubit, HomeState>(
+          builder: (context, state) {
+            return Scaffold(
+              bottomNavigationBar: CustomBottomNavigationBar(
+                  homeCubit: context.read<HomeCubit>()),
+              body: IndexedStack(
+                index: context.read<HomeCubit>().index,
+                children: const [
+                  HomePage(),
+                  BlogPage(),
+                  LearnPage(),
+                  ExplorePage(),
                 ],
-              );
-            },
-          ),
+              ),
+            );
+          },
         ),
       ),
     );
