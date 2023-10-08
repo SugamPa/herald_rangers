@@ -9,12 +9,27 @@ class QuizCubit extends Cubit<QuizState> {
     emit(state.copyWith(selectedIndex: index));
   }
 
+  void changeQuestionIndex(int index) {
+    emit(state.copyWith(currentQuestion: index));
+  }
+
   void changeQuestion({
-    required int correctAnswer,
+    required int currentIndex,
     required int totalQustion,
   }) {
-    double porgess = totalQustion / correctAnswer;
-    emit(state.copyWith(progess: porgess));
-    state..setSelectedIndexNull();
+    double progress = (currentIndex + 1) / totalQustion;
+    emit(state.copyWith(progess: progress));
+    state.setSelectedIndexNull();
+    emit(state.copyWith(check: false));
+  }
+
+  void checkAnswer(
+      List<String> options, int selectedIndex, String correctAnswer) {
+    emit(state.copyWith(check: true));
+    if (options[selectedIndex] == correctAnswer) {}
+  }
+
+  void reset() {
+    emit(state.copyWith(check: false));
   }
 }

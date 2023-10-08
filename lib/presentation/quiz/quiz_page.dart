@@ -1,3 +1,4 @@
+import 'package:eclipse_app/extensions/build_context_extensions.dart';
 import 'package:eclipse_app/presentation/quiz/quiz_cubit/quiz_cubit.dart';
 import 'package:eclipse_app/presentation/quiz/quiz_cubit/quiz_state.dart';
 import 'package:eclipse_app/resources/quizes_question.dart';
@@ -52,8 +53,9 @@ class Quizpage extends StatelessWidget {
                           children: [
                             Text("Quiz ${index + 1}"),
                             const SizedBox(height: 20),
-                            const Text(
-                                "During a total solar eclipse, what part of the Sun becomes visible around the edges of the Moon?"),
+                            Text(
+                              quiz[index].question,
+                            ),
                             // const Spacer(),
                             const SizedBox(height: 20),
                             BlocBuilder<QuizCubit, QuizState>(
@@ -64,9 +66,8 @@ class Quizpage extends StatelessWidget {
                                   itemBuilder: (context, answerIndex) {
                                     return InkWell(
                                       onTap: () {
-                                        context
-                                            .read<QuizCubit>()
-                                            .changeSelectedIndex(answerIndex);
+                                        final cubit = context.read<QuizCubit>();
+                                        cubit.changeSelectedIndex(answerIndex);
                                       },
                                       child: Container(
                                         padding: const EdgeInsets.all(12),
@@ -77,8 +78,22 @@ class Quizpage extends StatelessWidget {
                                               ? Border.all(color: Colors.yellow)
                                               : null,
                                         ),
-                                        child: const Center(
-                                          child: Text("Solor Eclipse"),
+                                        child: Row(
+                                          children: [
+                                            const Spacer(),
+                                            Text(quiz[index]
+                                                .options[answerIndex]),
+                                            const Spacer(),
+                                            state.check &&
+                                                    quiz[index].options[
+                                                            answerIndex] ==
+                                                        quiz[index].answer
+                                                ? const Icon(
+                                                    Icons.check,
+                                                    color: Colors.green,
+                                                  )
+                                                : const SizedBox(),
+                                          ],
                                         ),
                                       ),
                                     );
@@ -94,18 +109,49 @@ class Quizpage extends StatelessWidget {
                       },
                     ),
                   ),
-                  SizedBox(height: 20),
-                  InkWell(
-                    onTap: () {
-                      pageController.nextPage(
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.ease,
+                  const SizedBox(height: 20),
+                  BlocBuilder<QuizCubit, QuizState>(
+                    builder: (context, state) {
+                      return InkWell(
+                        onTap: state.selectedIndex == null
+                            ? () {}
+                            : () async {
+                                if ((pageController.page ?? 0).round() ==
+                                    quiz.length - 1) {
+                                  Navigator.of(context).pop();
+                                } else {
+                                  final cubit = context.read<QuizCubit>();
+                                  cubit.checkAnswer(
+                                      quiz[state.currentQuestion].options,
+                                      state.selectedIndex!,
+                                      quiz[state.currentQuestion].answer);
+                                  await Future.delayed(
+                                      const Duration(seconds: 1), () {
+                                    pageController.nextPage(
+                                        duration:
+                                            const Duration(milliseconds: 500),
+                                        curve: Curves.ease);
+                                  });
+                                  cubit.changeQuestion(
+                                      currentIndex:
+                                          (pageController.page ?? 0).round(),
+                                      totalQustion: quiz.length);
+                                }
+                              },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          color: state.selectedIndex == null
+                              ? Colors.grey[100]
+                              : Colors.yellow,
+                          child: Center(
+                              child: Text(
+                            "Check",
+                            style: context.titleSmall!
+                                .copyWith(color: Colors.black),
+                          )),
+                        ),
                       );
                     },
-                    child: Container(
-                      color: Colors.blue,
-                      child: const Center(child: Text("Check")),
-                    ),
                   ),
                 ],
               ),

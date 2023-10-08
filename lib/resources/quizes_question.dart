@@ -1,53 +1,56 @@
 final dailyQuiz = [
   {
-    "question": "What is the name of the first satellite sent into space?",
-    "options": ["Sputnik 1", "Sputnik 2", "Sputnik 3", "Sputnik 4"],
-    "answer": "Sputnik 1",
+    "question": "What is a solar eclipse?",
+    "options": ["Moon", "Sun", "Shadow", "Light"],
+    "answer": "Moon"
   },
   {
-    "question": "What is the name of the first satellite sent into space?",
-    "options": ["Sputnik 1", "Sputnik 2", "Sputnik 3", "Sputnik 4"],
-    "answer": "Sputnik 1",
+    "question": "What is a lunar eclipse?",
+    "options": ["Sun", "Earth", "Cloud", "Star"],
+    "answer": "Earth"
   },
   {
-    "question": "What is the name of the first satellite sent into space?",
-    "options": ["Sputnik 1", "Sputnik 2", "Sputnik 3", "Sputnik 4"],
-    "answer": "Sputnik 1",
+    "question": "What causes a total solar eclipse?",
+    "options": ["Moon", "Comet", "Asteroid", "Meteor"],
+    "answer": "Moon"
   },
   {
-    "question": "What is the name of the first satellite sent into space?",
-    "options": ["Sputnik 1", "Sputnik 2", "Sputnik 3", "Sputnik 4"],
-    "answer": "Sputnik 1",
+    "question": "What causes a penumbral lunar eclipse?",
+    "options": ["Penumbra", "Galaxy", "Nebula", "Pluto"],
+    "answer": "Penumbra"
   },
   {
-    "question": "What is the name of the first satellite sent into space?",
-    "options": ["Sputnik 1", "Sputnik 2", "Sputnik 3", "Sputnik 4"],
-    "answer": "Sputnik 1",
+    "question": "In what phase of the Moon can a solar eclipse occur?",
+    "options": ["New", "First", "Third", "Crescent"],
+    "answer": "New"
   },
   {
-    "question": "What is the name of the first satellite sent into space?",
-    "options": ["Sputnik 1", "Sputnik 2", "Sputnik 3", "Sputnik 4"],
-    "answer": "Sputnik 1",
+    "question": "In what phase of the Moon can a lunar eclipse occur?",
+    "options": ["Full", "Half", "Quarter", "Gibbous"],
+    "answer": "Full"
   },
   {
-    "question": "What is the name of the first satellite sent into space?",
-    "options": ["Sputnik 1", "Sputnik 2", "Sputnik 3", "Sputnik 4"],
-    "answer": "Sputnik 1",
+    "question":
+        "What is the term for the outermost part of the Sun's atmosphere visible during a total solar eclipse?",
+    "options": ["Flare", "Corona", "Prominence", "Core"],
+    "answer": "Corona"
   },
   {
-    "question": "What is the name of the first satellite sent into space?",
-    "options": ["Sputnik 1", "Sputnik 2", "Sputnik 3", "Sputnik 4"],
-    "answer": "Sputnik 1",
+    "question":
+        "How often does a total solar eclipse occur at any given location on Earth?",
+    "options": ["Varies", "Yearly", "Monthly", "Daily"],
+    "answer": "Varies"
   },
   {
-    "question": "What is the name of the first satellite sent into space?",
-    "options": ["Sputnik 1", "Sputnik 2", "Sputnik 3", "Sputnik 4"],
-    "answer": "Sputnik 1",
+    "question": "What is a hybrid eclipse?",
+    "options": ["Changes", "Rare", "Common", "Unique"],
+    "answer": "Changes"
   },
   {
-    "question": "What is the name of the first satellite sent into space?",
-    "options": ["Sputnik 1", "Sputnik 2", "Sputnik 3", "Sputnik 4"],
-    "answer": "Sputnik 1",
+    "question":
+        "What is the term for the darkest part of the Moon's shadow during a solar eclipse?",
+    "options": ["Umbra", "Penumbra", "Antumbra", "Solarium"],
+    "answer": "Umbra"
   },
 ];
 
