@@ -40,10 +40,16 @@ class CustomBottomNavigationBar extends StatelessWidget {
             isSelected: homeCubit.isSelected(1),
           ),
           NavBarButton(
-            label: "Blog",
-            icon: Icons.edit_square,
+            icon: Icons.menu_book_outlined,
+            label: "Learn",
             onTap: () => homeCubit.changeIndex(2),
             isSelected: homeCubit.isSelected(2),
+          ),
+          NavBarButton(
+            label: "Blog",
+            icon: Icons.edit_square,
+            onTap: () => homeCubit.changeIndex(3),
+            isSelected: homeCubit.isSelected(3),
           ),
         ],
       ),

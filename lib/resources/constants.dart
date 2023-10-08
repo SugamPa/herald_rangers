@@ -13,6 +13,8 @@ class Constants {
 }
 
 class AppDefaults {
+  static double bodyHeight(double deviceHeight) => deviceHeight * 0.8307;
+
   static const mapMarkerDefaultWidth = 50;
   static const mapMarkerMyLocationWidth = 60;
   static const mapMarkerOnlineWidth = 20;
@@ -82,6 +84,4 @@ class Routes {
   static const otpVerificationPage = '/otp-verification';
   static const createPasswordPage = '/create-password';
   static const homePage = '/home';
-  static const explorePage = '/explore';
-  static const blogPage = '/blog';
 }
