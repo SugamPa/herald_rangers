@@ -18,7 +18,7 @@ class ColorManager {
   static const Color greyBorderColor = Color(0xFFB4B4B4);
   static const Color labelColor = Color(0xFFA0A0A0);
   static const Color lightLabelColor = Color(0xFFAFAFAF);
-  static const Color lightTextGrey = Color(0xFF2F2F2F);
+  static const Color lightTextGrey = Color.fromARGB(255, 78, 78, 78);
   static const Color lighterTextGrey = Color(0xFFB3B3B3);
   static const Color textLightGrey = Color(0xFF9B9B9B);
 }

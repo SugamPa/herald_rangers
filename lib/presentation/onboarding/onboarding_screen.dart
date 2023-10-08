@@ -19,15 +19,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   List<Widget> pages = [
     const HeadingOnboarding(
       text: "EMBARK ON\nA COSMIC\nJOURNEY",
-      iamgeUrl: "assets/images/astronut.png",
+      iamgeUrl: "assets/images/onboarding1.png",
     ),
     const HeadingOnboarding(
       text: "INITIATE A\nGALACTIC\nEXPEDITION",
-      iamgeUrl: "assets/images/moon_girl.png",
+      iamgeUrl: "assets/images/onboarding2.png",
     ),
     const HeadingOnboarding(
       text: "LEARNING\nMEETS THE\nCOSMOS",
-      iamgeUrl: "assets/images/rocket.png",
+      iamgeUrl: "assets/images/onboarding3.png",
     ),
   ];
 
@@ -51,7 +51,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SizedBox(height: 10),
           Expanded(
               child: PageView.builder(
             itemCount: pages.length,

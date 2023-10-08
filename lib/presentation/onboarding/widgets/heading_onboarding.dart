@@ -19,7 +19,7 @@ class HeadingOnboarding extends StatelessWidget {
                 ),
           ),
         ),
-        const SizedBox(height: 60),
+        const SizedBox(height: 30),
         Image.asset(
           iamgeUrl,
           height: 400,
