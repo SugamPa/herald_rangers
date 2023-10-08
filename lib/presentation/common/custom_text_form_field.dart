@@ -7,9 +7,11 @@ class CustomTextFormField extends StatefulWidget {
   final String text;
   final bool obscureText;
   final TextInputType? keyboardType;
+  final TextEditingController? controller;
   const CustomTextFormField({
     super.key,
     required this.text,
+    this.controller,
     this.obscureText = false,
     this.keyboardType,
   });
@@ -40,12 +42,14 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
       focusNode: _focusNode,
       obscureText: widget.obscureText,
       keyboardType: widget.keyboardType,
       style: const TextStyle(color: ColorManager.white),
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 21),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 24, vertical: 21),
         hintText: widget.text,
         labelText: widget.text,
         labelStyle: isFieldSelected

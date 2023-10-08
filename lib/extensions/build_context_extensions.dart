@@ -2,22 +2,34 @@ import 'package:flutter/material.dart';
 
 extension BuildContextEntension<T> on BuildContext {
   NavigatorState get navigator => Navigator.of(this);
-  Future<T?> navigatorPush(Widget page) async => await Navigator.of(this).push(MaterialPageRoute<T>(builder: (_) => page));
-  Future<T?> navigatorPushReplacement(Widget page) async => await Navigator.of(this).pushReplacement(MaterialPageRoute<T>(builder: (_) => page));
+  Future<T?> navigatorPush(Widget page) async =>
+      await Navigator.of(this).push(MaterialPageRoute<T>(builder: (_) => page));
+  Future<T?> navigatorPushReplacement(Widget page) async =>
+      await Navigator.of(this)
+          .pushReplacement(MaterialPageRoute<T>(builder: (_) => page));
 
-  Future<T?> navigatorPushNamed(String routeName, {Object? arguments}) async => await Navigator.of(this).pushNamed(routeName, arguments: arguments);
-  Future<T?> navigatorPushReplacementNamed(String routeName, {Object? arguments}) async =>
-      await Navigator.of(this).pushReplacementNamed(routeName, arguments: arguments);
+  Future<T?> navigatorPushNamed(String routeName, {Object? arguments}) async =>
+      await Navigator.of(this).pushNamed(routeName, arguments: arguments);
+  Future<T?> navigatorPushReplacementNamed(String routeName,
+          {Object? arguments}) async =>
+      await Navigator.of(this)
+          .pushReplacementNamed(routeName, arguments: arguments);
 
   bool get isMobile => MediaQuery.sizeOf(this).width <= 500.0;
 
-  bool get isTablet => MediaQuery.sizeOf(this).width < 1024.0 && MediaQuery.sizeOf(this).width >= 650.0;
+  bool get isTablet =>
+      MediaQuery.sizeOf(this).width < 1024.0 &&
+      MediaQuery.sizeOf(this).width >= 650.0;
 
-  bool get isSmallTablet => MediaQuery.sizeOf(this).width < 650.0 && MediaQuery.sizeOf(this).width > 500.0;
+  bool get isSmallTablet =>
+      MediaQuery.sizeOf(this).width < 650.0 &&
+      MediaQuery.sizeOf(this).width > 500.0;
 
   bool get isDesktop => MediaQuery.sizeOf(this).width >= 1024.0;
 
-  bool get isSmall => MediaQuery.sizeOf(this).width < 850.0 && MediaQuery.sizeOf(this).width >= 560.0;
+  bool get isSmall =>
+      MediaQuery.sizeOf(this).width < 850.0 &&
+      MediaQuery.sizeOf(this).width >= 560.0;
 
   double get width => MediaQuery.sizeOf(this).width;
 
@@ -49,13 +61,19 @@ extension BuildContextEntension<T> on BuildContext {
 
   TextStyle? get bodySmall => Theme.of(this).textTheme.bodySmall;
 
-  TextStyle? get bodyExtraSmall => bodySmall?.copyWith(fontSize: 10, height: 1.6, letterSpacing: .5);
+  TextStyle? get bodyExtraSmall =>
+      bodySmall?.copyWith(fontSize: 10, height: 1.6, letterSpacing: .5);
 
   TextStyle? get bodyLarge => Theme.of(this).textTheme.bodyLarge;
 
-  TextStyle? get dividerTextSmall => bodySmall?.copyWith(letterSpacing: 0.5, fontWeight: FontWeight.w700, fontSize: 12.0);
+  TextStyle? get dividerTextSmall => bodySmall?.copyWith(
+      letterSpacing: 0.5, fontWeight: FontWeight.w700, fontSize: 12.0);
 
-  TextStyle? get dividerTextLarge => bodySmall?.copyWith(letterSpacing: 1.5, fontWeight: FontWeight.w700, fontSize: 13.0, height: 1.23);
+  TextStyle? get dividerTextLarge => bodySmall?.copyWith(
+      letterSpacing: 1.5,
+      fontWeight: FontWeight.w700,
+      fontSize: 13.0,
+      height: 1.23);
 
   // colors
   Color get primaryColor => Theme.of(this).primaryColor;
@@ -97,10 +115,16 @@ extension BuildContextEntension<T> on BuildContext {
     );
   }
 
-  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnackBar(String message) {
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnackBar(
+      String message) {
     return ScaffoldMessenger.of(this).showSnackBar(
       SnackBar(
-        content: Text(message),
+        backgroundColor: Colors.white,
+        content: Text(message,
+            style: Theme.of(this)
+                .textTheme
+                .bodyMedium
+                ?.copyWith(color: Colors.black)),
         behavior: SnackBarBehavior.floating,
         // backgroundColor: primary,
       ),
