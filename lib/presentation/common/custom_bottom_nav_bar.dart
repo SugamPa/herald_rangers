@@ -1,43 +1,78 @@
+import 'package:eclipse_app/presentation/homepage/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import '../../../extensions/build_context_extensions.dart';
 
 import '../../../resources/resources.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
+  final HomeCubit homeCubit;
   const CustomBottomNavigationBar({
     super.key,
+    required this.homeCubit,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: context.height * 0.07,
-      margin: EdgeInsets.only(bottom: context.height * 0.02, left: context.width * 0.04, right: context.width * 0.04),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(50), color: ColorManager.white, boxShadow: [
+      height: context.height * 0.1,
+      padding: const EdgeInsets.only(bottom: 30),
+      decoration: BoxDecoration(color: ColorManager.pureBlack, boxShadow: [
         BoxShadow(
-          color: ColorManager.black.withOpacity(0.2),
+          color: ColorManager.white.withOpacity(0.2),
           spreadRadius: 5,
-          blurRadius: 15,
-          offset: const Offset(0, 3),
+          blurRadius: 1,
+          offset: const Offset(2, 3),
         ),
       ]),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.home, size: 30),
+        children: [
+          NavBarButton(
+            icon: Icons.home_filled,
+            label: "Home",
+            onTap: () => homeCubit.changeIndex(0),
+            isSelected: true,
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.search, size: 30),
+          NavBarButton(
+            label: "Explore",
+            icon: Icons.explore_outlined,
+            onTap: () => homeCubit.changeIndex(1),
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.favorite, size: 30),
+          NavBarButton(
+            label: "Blog",
+            icon: Icons.edit_square,
+            onTap: () => homeCubit.changeIndex(2),
           ),
         ],
       ),
+    );
+  }
+}
+
+class NavBarButton extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final void Function() onTap;
+  final bool isSelected;
+  const NavBarButton({
+    super.key,
+    required this.icon,
+    required this.label,
+    required this.onTap,
+    this.isSelected = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        GestureDetector(
+          onTap: onTap,
+          child: Icon(icon, size: 25, color: isSelected ? ColorManager.white : ColorManager.lightTextGrey),
+        ),
+        Text(label, style: TextStyle(color: isSelected ? ColorManager.white : ColorManager.lightTextGrey)),
+      ],
     );
   }
 }

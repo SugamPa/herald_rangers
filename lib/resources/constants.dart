@@ -82,4 +82,6 @@ class Routes {
   static const otpVerificationPage = '/otp-verification';
   static const createPasswordPage = '/create-password';
   static const homePage = '/home';
+  static const explorePage = '/explore';
+  static const blogPage = '/blog';
 }
